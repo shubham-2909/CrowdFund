@@ -2,6 +2,7 @@
 .env
 ./crowdcoin/.env
 /.env
+/.env
 logs
 *.log
 npm-debug.log*
