@@ -1,5 +1,5 @@
 # Logs
-./.env
+.env
 ./crowdcoin/.env
 logs
 *.log
