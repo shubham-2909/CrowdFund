@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "C:\\Users\\sg976\\OneDrive\\Desktop\\CrowdCoin\\crowdcoin\\contracts\\Campaign.sol": {
-      "lastModificationDate": 1689631183834,
-      "contentHash": "6efa29c579a22ce39f815ad34870420d",
+      "lastModificationDate": 1689890636658,
+      "contentHash": "aa45e4e0b2be4d926e7d9924ac56edab",
       "sourceName": "contracts/Campaign.sol",
       "solcConfig": {
         "version": "0.4.17",

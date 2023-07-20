@@ -3,9 +3,8 @@ pragma solidity ^0.4.17;
 contract CampaignFactory {
     address[] public deployedCampaigns;
 
-    function createCampaign(uint deadline , uint target, string title , string description , string image ) public {
-
-        require(deadline < block.timestamp); //The deadline should be a date in future
+    function createCampaign(uint deadline , string target, string title , string description , string image ) public {
+         //The deadline should be a date in future
         address newCampaign = new Campaign(msg.sender, title, description , image , target , deadline);
         deployedCampaigns.push(newCampaign);
     }
@@ -31,7 +30,7 @@ contract Campaign{
     string public image;
     Request[] public requests;
     mapping (address=>bool) public approvers;
-    uint public target;
+    string public target;
     uint public deadline;
 
     modifier restricted(){
@@ -39,7 +38,7 @@ contract Campaign{
         _;
     }
 
-    function Campaign(address creator , string _title , string _description , string _image , uint _target , uint _deadline)public {
+    function Campaign(address creator , string _title , string _description , string _image , string _target , uint _deadline)public {
         manager = creator;
         title = _title;
         purpose = _description;
@@ -81,7 +80,7 @@ contract Campaign{
     request.complete=true;
     }
 
-    function getSummary() public view returns(uint, uint, uint , string, string , string ,address){
+    function getSummary() public view returns(uint, string, uint , string, string , string ,address){
     return(
         approversCount,
         target,

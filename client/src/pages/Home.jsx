@@ -1,5 +1,5 @@
 const Home = () => {
-  return <div>Home</div>
+  return <div className='font-[#fff]'>Home</div>
 }
 
 export { Home }

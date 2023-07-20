@@ -1,7 +1,9 @@
 import { Routes, Route } from 'react-router-dom'
-import { Home } from './pages'
+import { CreateCampaign, Home } from './pages'
 import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 function App() {
   return (
     <div className='relative sm:-8 p-4  min-h-screen flex flex-row color-white bg-[#13131a]'>
@@ -13,8 +15,10 @@ function App() {
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/create-campaign' element={<CreateCampaign />} />
         </Routes>
       </div>
+      <ToastContainer />
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import web3 from './web3'
-const address = '0xC84Cde552589B743F179450D5c9E94572754E342'
+const address = '0x893a1a51D638a30c4d14C7ded65814E9BEADDfA3'
 const factoryABI = [
   {
     constant: true,
@@ -21,20 +21,6 @@ const factoryABI = [
     type: 'function',
   },
   {
-    constant: true,
-    inputs: [],
-    name: 'getDeployedCampaigns',
-    outputs: [
-      {
-        name: '',
-        type: 'address[]',
-      },
-    ],
-    payable: false,
-    stateMutability: 'view',
-    type: 'function',
-  },
-  {
     constant: false,
     inputs: [
       {
@@ -43,7 +29,7 @@ const factoryABI = [
       },
       {
         name: 'target',
-        type: 'uint256',
+        type: 'string',
       },
       {
         name: 'title',
@@ -62,6 +48,20 @@ const factoryABI = [
     outputs: [],
     payable: false,
     stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: 'getDeployedCampaigns',
+    outputs: [
+      {
+        name: '',
+        type: 'address[]',
+      },
+    ],
+    payable: false,
+    stateMutability: 'view',
     type: 'function',
   },
 ]
