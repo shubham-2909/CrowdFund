@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import web3 from '../utils/web3'
 import instance from '../utils/factory'
-import Campaign from '../utils/campaign'
 import { toast } from 'react-toastify'
 import DisplayCampaigns from '../components/DisplayCampaigns'
+import Campaign from '../utils/getCampaign'
 const Home = () => {
   const [allCampaigns, setAllCampaigns] = useState([])
   const [isLoading, setIsLoading] = useState(false)
