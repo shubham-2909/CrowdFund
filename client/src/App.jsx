@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import { CreateCampaign, Home } from './pages'
+import { CampaignDetails, CreateCampaign, Home } from './pages'
 import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
 import { ToastContainer } from 'react-toastify'
@@ -16,6 +16,10 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/create-campaign' element={<CreateCampaign />} />
+          <Route
+            path='/campaign-details/:address'
+            element={<CampaignDetails />}
+          />
         </Routes>
       </div>
       <ToastContainer />

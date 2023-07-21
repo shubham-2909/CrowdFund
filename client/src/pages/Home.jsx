@@ -21,7 +21,6 @@ const Home = () => {
           .getSummary()
           .call({ from: accounts[0] })
         const balance = await web3.eth.getBalance(address)
-        console.log(summary)
         const newObj = {
           approversCount: summary['0'],
           target: web3.utils.fromWei(summary['1'], 'ether'),
