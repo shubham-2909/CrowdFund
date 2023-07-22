@@ -20,7 +20,8 @@ const Home = () => {
         const summary = await campaign.methods
           .getSummary()
           .call({ from: accounts[0] })
-        const balance = await web3.eth.getBalance(address)
+        let balance = await web3.eth.getBalance(address)
+        balance = web3.utils.fromWei(balance, 'ether')
         const newObj = {
           approversCount: summary['0'],
           target: web3.utils.fromWei(summary['1'], 'ether'),
@@ -34,6 +35,7 @@ const Home = () => {
       }
       setAllCampaigns(arr)
     } catch (err) {
+      console.log(err)
       toast.error(err.message)
     }
     setIsLoading(false)
