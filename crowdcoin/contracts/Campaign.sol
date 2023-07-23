@@ -48,6 +48,7 @@ contract Campaign{
     }
 
     function contribute() public payable{
+        require(!approvers[msg.sender]);
         approvers[msg.sender] = true;
         approversCount++;
     }

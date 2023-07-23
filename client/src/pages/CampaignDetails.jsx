@@ -7,6 +7,7 @@ import CountBox from '../components/CountBox'
 import { thirdweb } from '../assets'
 import Campaign from '../utils/getCampaign'
 import { toast } from 'react-toastify'
+import Loader from '../components/Loader'
 const CampaignDetails = () => {
   const navigate = useNavigate()
   const [isLoading, setIsLoading] = useState(false)
@@ -64,11 +65,11 @@ const CampaignDetails = () => {
   useEffect(() => {
     getSingleCampaign()
   }, [])
-
+  if (isLoading) {
+    return <Loader />
+  }
   return (
     <div>
-      {isLoading && 'Loading...'}
-
       <div className='w-full flex md:flex-row flex-col mt-10 gap-[30px]'>
         <div className='flex-1 flex-col'>
           <img
@@ -92,8 +93,8 @@ const CampaignDetails = () => {
         <div className='flex md:w-[150px] w-full flex-wrap justify-between gap-[20px]'>
           <CountBox title='Days Left' value={remainingDays} />
           <CountBox
-            title={`Raised of ${singleCampaign.target}`}
-            value={singleCampaign.balance}
+            title={`Goal to achieve`}
+            value={`${singleCampaign.target} ETH`}
           />
           <CountBox
             title='Total Donations'

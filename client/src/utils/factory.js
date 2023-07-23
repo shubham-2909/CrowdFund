@@ -1,5 +1,5 @@
 import web3 from './web3'
-const address = '0x893a1a51D638a30c4d14C7ded65814E9BEADDfA3'
+const address = '0x3622735E87d160311292daCbF6a5B77841184CF1'
 const factoryABI = [
   {
     constant: true,
